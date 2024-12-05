@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.active {
+    background-color: #414558;
+    &:hover {
+        background-color: #414558 !important;
+    }
+}
+
+.notActive {
+    background-color: #FF7AC6;
+    &:hover {
+        background-color: #FF7AC6 !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
