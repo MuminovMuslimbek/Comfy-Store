@@ -1,12 +1,14 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { Puff } from 'react-loader-spinner'  // Puff spinner import qilish
+import { Puff } from 'react-loader-spinner'
+import { useNavigate } from 'react-router-dom'
 
 function ProductsDetails() {
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(false)
     const { id } = useParams()
+    const navigate = useNavigate()
 
     useEffect(() => {
         setLoading(true)
@@ -14,13 +16,20 @@ function ProductsDetails() {
             .then(response => {
                 if (response.status === 200) {
                     setProduct(response.data.data)
-                }
+                } 
             })
             .catch(err => {
                 console.log(err)
             })
             .finally(() => setLoading(false))
-    }, [id])  // id dependentsiz ishlashini ta'minlash
+    }, [id])
+
+    function handleToHomePage() {
+        navigate('/')
+    }
+    function handleToProductsPage() {
+        navigate('/products')
+    }
 
     return (
         <>
@@ -30,11 +39,11 @@ function ProductsDetails() {
                 </div>
             ) : (
                 product.id ? (
-                    <div className='max-w-[1100px] w-full mx-auto py-24'>
-                        <div>
-                            <button>Home</button>
-                            <span>{'>'}</span>
-                            <button>Products</button>
+                    <div className='max-w-[1100px] w-full mx-auto py-24 '>
+                        <div className='flex items-center gap-2 text-[#F8F8F2] pb-[25px]'>
+                            <button className='hover:underline' onClick={handleToHomePage}>Home</button>
+                            <span className='text-[#bebebe] font-medium'>{'>'}</span>
+                            <button className='hover:underline' onClick={handleToProductsPage}>Products</button>
                         </div>
                         <div className='flex gap-14 justify-between text-[#F8F8F2]'>
                             <img src={product.attributes.image} className='max-w-[500px] h-96 object-cover rounded-lg lg:w-full' alt={product.attributes.title} />
@@ -64,7 +73,7 @@ function ProductsDetails() {
                         </div>
                     </div>
                 ) : (
-                    <p>No product data available</p>
+                    navigate('/products')
                 )
             )}
         </>
