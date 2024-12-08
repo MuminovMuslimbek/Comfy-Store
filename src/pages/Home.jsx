@@ -52,14 +52,14 @@ function Home() {
                 our products
               </button>
             </div>
-            <div className="max-w-[460px] overflow-x-scroll w-full flex gap-2 bg-[#414558] rounded-2xl h-[28rem] p-4 whitespace-nowrap">
+            <div className="max-w-[460px] hidden h-[28rem] lg:carousel carousel-center p-4 space-x-4 bg-neutral rounded-box">
               <img className="max-w-[350px] w-full h-full rounded-2xl" src={Hero} alt="Hero" />
               <img className="max-w-[350px] w-full h-full rounded-2xl" src={Hero2} alt="Hero2" />
               <img className="max-w-[350px] w-full h-full rounded-2xl" src={Hero3} alt="Hero3" />
               <img className="max-w-[350px] w-full h-full rounded-2xl" src={Hero4} alt="Hero4" />
             </div>
           </div>
-          <div className='border-b border-base-300 border-[#000] pb-5 capitalize text-[#F8F8F2]'>
+          <div className='border-b border-base-300 pb-5 capitalize text-[#F8F8F2]'>
             <h2 className='text-3xl font-medium tracking-wider capitalize '>featured products</h2>
           </div>
           <div className='pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>

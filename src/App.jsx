@@ -5,7 +5,7 @@ import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
 import Login from './pages/Login.jsx'
 import Register from './pages/Register.jsx'
-import Products from './pages/Products.jsx'
+import Products from './pages/Products.jsx';
 import Cart from './pages/Cart.jsx'
 import ProductsDetails from './pages/ProductsDetails.jsx'
 import ErrorPage from './pages/ErrorPage.jsx'

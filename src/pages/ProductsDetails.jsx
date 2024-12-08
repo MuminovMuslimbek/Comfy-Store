@@ -39,7 +39,7 @@ function ProductsDetails() {
                 </div>
             ) : (
                 product.id ? (
-                    <div className='max-w-[1100px] w-full mx-auto py-24 '>
+                    <div className='max-w-[1100px] w-full mx-auto py-24 h-full'>
                         <div className='flex items-center gap-2 text-[#F8F8F2] pb-[25px]'>
                             <button className='hover:underline' onClick={handleToHomePage}>Home</button>
                             <span className='text-[#bebebe] font-medium'>{'>'}</span>

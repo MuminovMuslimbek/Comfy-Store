@@ -15,7 +15,7 @@ function header() {
 
     return (
         <header className='flex flex-col select-none'>
-            <div className=' bg-neutral py-2 text-neutral-content bg-[#414558] '>
+            <div className='py-2 text-neutral-content bg-[#414558] '>
                 <div className='flex justify-end gap-7 text-[#e9e9e7] max-w-[1100px] w-full mx-auto'>
                     <NavLink to='/login' className='link link-hover text-xs sm:text-sm hover:underline' >Sign in / Guest</NavLink>
                     <NavLink to='/register' className='link link-hover text-xs sm:text-sm hover:underline' >Create Account</NavLink>
@@ -30,11 +30,11 @@ function header() {
                         <NavLink to='/products' className=' py-2 px-4 transition-[0.5s] rounded-lg text-[15px] hover:bg-[#2F2F35]'>Products</NavLink>
                         <NavLink to='/cart' className=' py-2 px-4 transition-[0.5s] rounded-lg text-[15px] hover:bg-[#2F2F35]' >Cart</NavLink>
                     </ul>
-                    <div className='flex items-center gap-[30px]'>
-                        <img className='cursor-pointer hover:rotate-[360deg]' src={Sun} />
-                        <div onClick={handleNavigateToCart} className='relative active:scale-95 transition-[0.3s]'>
+                    <div className='flex items-center gap-[15px]'>
+                        <img className='cursor-pointer hover:rotate-[360deg] w-[18px]' src={Sun} />
+                        <div onClick={handleNavigateToCart} className='relative active:scale-95 cursor-pointer transition-[0.5s] p-[8px] rounded-full hover:bg-[#45464A]'>
                             <img src={Basket} className='w-[30px] cursor-pointer' />
-                            <span className='absolute top-[-3px] right-[-10px] bg-[#FF7AC6] px-[8px] rounded-2xl text-[10px] '>0</span>
+                            <span className='absolute top-[3px] right-[-3px] bg-[#FF7AC6] text-[#2F2F35] px-[8px] rounded-2xl text-[10px]'>0</span>
                         </div>
                     </div>
                 </div>
