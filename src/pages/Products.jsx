@@ -151,11 +151,11 @@ function Products() {
       <div className='max-w-[1100px] w-full mx-auto'>
         <div className='border-b border-base-300 pb-5 text-[#F8F8F2] flex justify-between'>
           <h2 className='text-3xl font-medium tracking-wider text-[17px]'>{filterProduct.pagination && filterProduct.pagination.total} products</h2>
-          <div class="flex gap-x-2">
-            <button type="button" class="text-xl btn btn-circle btn-sm hover:bg-[#FF7AC6]  bg-[#FF7AC6] text-primary-content">
+          <div className="flex gap-x-2">
+            <button type="button" className="text-xl btn btn-circle btn-sm hover:bg-[#FF7AC6]  bg-[#FF7AC6] text-primary-content">
               <img src={burgerBold} />
             </button>
-            <button type="button" class="text-xl btn btn-circle btn-sm btn-ghost text-based-content">
+            <button type="button" className="text-xl btn btn-circle btn-sm btn-ghost text-based-content">
               <img src={burger} className='text-white' />
             </button>
           </div>

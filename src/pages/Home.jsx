@@ -38,7 +38,7 @@ function Home() {
     <div className='max-w-[1100px] w-full mx-auto py-20'>
       {loading ? (
         <div className='w-full pt-[200px] max-h-[500px] h-full flex justify-center items-center'>
-          <Puff visible={true} height="80" width="80" color="#fff" ariaLabel="puff-loading" wrapperStyle={{}} wrapperClass=""/>
+          <Puff visible={true} height="80" width="80" color="#fff" ariaLabel="puff-loading" wrapperStyle={{}} wrapperclassName=""/>
         </div>
       ) : (
         <div>
