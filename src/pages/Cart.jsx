@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { CountCart } from '../App';
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [notProduct, setNotProduct] = useState(false);
+
+  const { count, setCount } = useContext(CountCart)
 
   function getItemFromLocalStorage() {
     const data = localStorage.getItem('cart');
@@ -32,6 +35,7 @@ function Cart() {
   }, []);
 
   const totalAmount = cartItems.reduce((total, item) => total + item.amount, 0);
+  setCount(totalAmount)
 
   return (
     <div className='max-w-[1100px] w-full mx-auto py-[80px]'>

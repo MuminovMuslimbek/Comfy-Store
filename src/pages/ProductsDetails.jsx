@@ -1,8 +1,9 @@
 import axios from 'axios'
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Puff } from 'react-loader-spinner'
 import { useNavigate } from 'react-router-dom'
+import { CountCart } from '../App'
 
 function ProductsDetails() {
     const [product, setProduct] = useState({})
@@ -11,6 +12,7 @@ function ProductsDetails() {
     const navigate = useNavigate()
     const [productColor, setProductColor] = useState('')
     const [amount, setAmount] = useState(1)
+    const { count, setCount } = useContext(CountCart)
 
     useEffect(() => {
         setLoading(true)

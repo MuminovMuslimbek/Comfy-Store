@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import Basket from '../assets/basket.svg'
 import Sun from '../assets/sun.svg'
+import { CountCart } from '../App'
 
 function header() {
     const navigate = useNavigate()
+    const { count, setCount } = useContext(CountCart)
 
     function handleHomePage() {
         navigate('/')
@@ -34,7 +36,7 @@ function header() {
                         <img className='cursor-pointer hover:rotate-[360deg] w-[18px]' src={Sun} />
                         <div onClick={handleNavigateToCart} className='relative active:scale-95 cursor-pointer transition-[0.5s] p-[8px] rounded-full hover:bg-[#45464A]'>
                             <img src={Basket} className='w-[30px] cursor-pointer' />
-                            <span className='absolute top-[3px] right-[-3px] bg-[#FF7AC6] text-[#2F2F35] px-[8px] rounded-2xl text-[10px]'>0</span>
+                            <span className='absolute top-[3px] right-[-3px] bg-[#FF7AC6] text-[#2F2F35] px-[8px] rounded-2xl text-[10px]'>{count}</span>
                         </div>
                     </div>
                 </div>
