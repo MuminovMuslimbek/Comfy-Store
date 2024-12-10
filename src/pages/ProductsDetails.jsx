@@ -5,6 +5,8 @@ import { Puff } from 'react-loader-spinner'
 import { useNavigate } from 'react-router-dom'
 import { CountCart } from '../App'
 
+
+
 function ProductsDetails() {
     const [product, setProduct] = useState({})
     const [loading, setLoading] = useState(false)
