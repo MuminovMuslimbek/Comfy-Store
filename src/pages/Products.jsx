@@ -45,7 +45,6 @@ function Products() {
           if (response.data) {
             setProducts(response.data.data)
             setFilterProduct(response.data.meta)
-          } else {
           }
         }
       })
@@ -58,15 +57,15 @@ function Products() {
 
   return (
     <>
-      <form className='max-w-[1100px] w-full mx-auto my-[50px] flex flex-col gap-[30px] p-[30px] bg-[#181920] rounded-lg'>
+      <form className='flex flex-col gap-[30px] bg-[#181920] mx-auto my-[50px] p-[30px] rounded-lg w-full max-w-[1100px]'>
         <div className="flex justify-between gap-[20px]">
-          <label className="flex flex-col w-[23%]  gap-[7px] text-[#f8f8f8] text-[16px]" htmlFor="product">
+          <label className="flex flex-col gap-[7px] w-[23%] text-[#f8f8f8] text-[16px]" htmlFor="product">
             Search Product
-            <input id="product" value={search} onChange={(e) => setSearch(e.target.value)} className="bg-[#272935] border border-[#767575] text-[#f8f8f8] rounded-lg py-[5px] px-3 focus:outline-none focus:ring-2 focus:ring-[#f06292]" type="text" />
+            <input id="product" value={search} onChange={(e) => setSearch(e.target.value)} className="border-[#767575] bg-[#272935] px-3 py-[5px] border rounded-lg focus:ring-2 focus:ring-[#f06292] text-[#f8f8f8] focus:outline-none" type="text" />
           </label>
-          <label className="flex flex-col w-[23%] gap-[7px] text-[#f8f8f8] text-[16px]" htmlFor="category">
+          <label className="flex flex-col gap-[7px] w-[23%] text-[#f8f8f8] text-[16px]" htmlFor="category">
             Select Category
-            <select value={category} onChange={(e) => setCategory(e.target.value)} className="bg-[#272935]  border border-[#767575] text-[#f8f8f8] rounded-lg py-[5px] px-3 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#f06292]">
+            <select value={category} onChange={(e) => setCategory(e.target.value)} className="border-[#767575] bg-[#272935] px-3 py-[5px] border rounded-lg focus:ring-2 focus:ring-[#f06292] text-[#f8f8f8] cursor-pointer focus:outline-none">
               {filterProduct && filterProduct.categories && filterProduct.categories.length > 0 ? (
                 filterProduct.categories.map((value, index) => (
                   <option key={index} value={value}>{value}</option>
@@ -76,9 +75,9 @@ function Products() {
               )}
             </select>
           </label>
-          <label className="flex flex-col w-[23%]  gap-[7px] text-[#f8f8f8] text-[16px]" htmlFor="company">
+          <label className="flex flex-col gap-[7px] w-[23%] text-[#f8f8f8] text-[16px]" htmlFor="company">
             Select Company
-            <select value={company} id="company" onChange={(e) => setCompany(e.target.value)} className="bg-[#272935]  border border-[#767575] text-[#f8f8f8] rounded-lg py-[5px] px-3 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#f06292]">
+            <select value={company} id="company" onChange={(e) => setCompany(e.target.value)} className="border-[#767575] bg-[#272935] px-3 py-[5px] border rounded-lg focus:ring-2 focus:ring-[#f06292] text-[#f8f8f8] cursor-pointer focus:outline-none">
               {
                 filterProduct && filterProduct.companies && filterProduct.companies.length > 0 ? (
                   filterProduct.companies.map((value, index) => (
@@ -90,9 +89,9 @@ function Products() {
               }
             </select>
           </label>
-          <label className="flex flex-col  w-[23%] gap-[7px] text-[#f8f8f8] text-[16px]" htmlFor="sort">
+          <label className="flex flex-col gap-[7px] w-[23%] text-[#f8f8f8] text-[16px]" htmlFor="sort">
             Sort By
-            <select value={order} id="sort" onChange={(e) => setOrder(e.target.value)} className="bg-[#272935] text-[#f8f8f8] border border-[#767575] rounded-lg py-[5px] px-3 cursor-pointer focus:outline-none focus:ring-2 focus:ring-[#f06292]">
+            <select value={order} id="sort" onChange={(e) => setOrder(e.target.value)} className="border-[#767575] bg-[#272935] px-3 py-[5px] border rounded-lg focus:ring-2 focus:ring-[#f06292] text-[#f8f8f8] cursor-pointer focus:outline-none">
               <option value="a-z">a-z</option>
               <option value="z-a">z-a</option>
               <option value="high">high</option>
@@ -100,8 +99,8 @@ function Products() {
             </select>
           </label>
         </div>
-        <div className='flex  justify-between gap-[20px] items-center'>
-          <div className="flex flex-col gap-3 max-w-[240px] w-full text-[#f8f8f8] font-medium">
+        <div className='flex justify-between items-center gap-[20px]'>
+          <div className="flex flex-col gap-3 w-full max-w-[240px] font-medium text-[#f8f8f8]">
             <label htmlFor="price" className="flex justify-between items-center">
               <span>Select Price</span>
               <span>${price.toFixed(2)}</span>
@@ -112,13 +111,13 @@ function Products() {
               <span>Max: $1,000.00</span>
             </div>
           </div>
-          <div className="max-w-[230px] w-full">
-            <label htmlFor="checkbox" className="flex flex-col items-center w-full gap-[7px] text-[#f8f8f8] text-[16px]">
+          <div className="w-full max-w-[230px]">
+            <label htmlFor="checkbox" className="flex flex-col items-center gap-[7px] w-full text-[#f8f8f8] text-[16px]">
               Free shopping
               <input id="checkbox" type="checkbox" className="checkbox checkbox-secondary checkbox-sm" />
             </label>
           </div>
-          <button onClick={handleSearch} className="max-w-[230px] w-full active:scale-95 px-6 py-[6px] bg-[#f06292] text-[#1b1c21] font-semibold rounded-lg hover:opacity-80 transition">
+          <button onClick={handleSearch} className="bg-[#f06292] hover:opacity-80 px-6 py-[6px] rounded-lg w-full max-w-[230px] font-semibold text-[#1b1c21] transition active:scale-95">
             SEARCH
           </button>
           <button
@@ -143,39 +142,39 @@ function Products() {
                 })
                 .finally(() => setLoading(false));
             }}
-            className="max-w-[230px] w-full px-6 py-[6px] active:scale-95 bg-[#ffa726] text-[#1b1c21] font-semibold rounded-lg hover:opacity-80 transition">
+            className="bg-[#ffa726] hover:opacity-80 px-6 py-[6px] rounded-lg w-full max-w-[230px] font-semibold text-[#1b1c21] transition active:scale-95">
             RESET
           </button>
         </div>
       </form >
-      <div className='max-w-[1100px] w-full mx-auto'>
-        <div className='border-b border-base-300 pb-5 text-[#F8F8F2] flex justify-between'>
-          <h2 className='text-3xl font-medium tracking-wider text-[17px]'>{filterProduct.pagination && filterProduct.pagination.total} products</h2>
+      <div className='mx-auto w-full max-w-[1100px]'>
+        <div className='flex justify-between pb-5 border-b border-base-300 text-[#F8F8F2]'>
+          <h2 className='font-medium text-[17px] text-3xl tracking-wider'>{filterProduct.pagination && filterProduct.pagination.total} products</h2>
           <div className="flex gap-x-2">
-            <button type="button" className="text-xl btn btn-circle btn-sm hover:bg-[#FF7AC6]  bg-[#FF7AC6] text-primary-content">
+            <button type="button" className="bg-[#FF7AC6] hover:bg-[#FF7AC6] text-primary-content text-xl btn btn-circle btn-sm">
               <img src={burgerBold} />
             </button>
-            <button type="button" className="text-xl btn btn-circle btn-sm btn-ghost text-based-content">
+            <button type="button" className="text-based-content text-xl btn btn-circle btn-ghost btn-sm">
               <img src={burger} className='text-white' />
             </button>
           </div>
         </div>
       </div>
       {loading && (
-        <div className='w-full pt-[250px] max-h-[500px] h-full flex justify-center items-center'>
+        <div className='flex justify-center items-center pt-[250px] w-full h-full max-h-[500px]'>
           <Puff visible={true} height="80" width="80" color="#fff" ariaLabel="puff-loading" />
         </div>
       )}
-      <div className='py-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-[1100px] w-full mx-auto'>
+      <div className='gap-4 grid md:grid-cols-2 lg:grid-cols-3 mx-auto py-12 w-full max-w-[1100px]'>
         {
           products.length == 0 ? (
-            <p className='text-2xl mt-16 w-[1000px] mx-auto text-[#f8f8f8]'>Sorry, no products matched your search...</p>
+            <p className='mx-auto mt-16 w-[1000px] text-[#f8f8f8] text-2xl'>Sorry, no products matched your search...</p>
           ) : products.map(function (product, index) {
             return (
-              <div onClick={() => { handleRedirect(product.id) }} key={index} className='text-[#F8F8F2] w-full shadow-xl hover:shadow-2xl transition cursor-pointer select-none duration-300 p-4 rounded-2xl'>
-                <img src={product.attributes.image} className='rounded-xl h-64 md:h-48 w-full object-cover' />
-                <div className='card-body items-center text-center p-6 flex flex-col gap-2'>
-                  <h3 className='capitalize font-medium text-[20px]'>{product.attributes.title}</h3>
+              <div onClick={() => { handleRedirect(product.id) }} key={index} className='shadow-xl hover:shadow-2xl p-4 rounded-2xl w-full text-[#F8F8F2] transition duration-300 cursor-pointer select-none'>
+                <img src={product.attributes.image} className='rounded-xl w-full h-64 md:h-48 object-cover' />
+                <div className='flex flex-col items-center gap-2 p-6 text-center card-body'>
+                  <h3 className='font-medium text-[20px] capitalize'>{product.attributes.title}</h3>
                   <p className='text-[#846eaa]'>${product.attributes.price}</p>
                 </div>
               </div>

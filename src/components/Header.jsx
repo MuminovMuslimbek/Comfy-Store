@@ -6,7 +6,7 @@ import { CountCart } from '../App'
 
 function header() {
     const navigate = useNavigate()
-    const { count, setCount } = useContext(CountCart)
+    const { count } = useContext(CountCart)
 
     function handleHomePage() {
         navigate('/')
